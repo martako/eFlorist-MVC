@@ -199,10 +199,22 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FloristController.cs" />
     <Compile Include="Controllers\HelloWorldController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvoiceController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
+    <Compile Include="Controllers\ItemTypeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\OrderItemController.cs" />
+    <Compile Include="Controllers\PaymentTypeController.cs" />
+    <Compile Include="Controllers\StatusTypeController.cs" />
+    <Compile Include="Controllers\TruckController.cs" />
+    <Compile Include="Controllers\TruckTypeController.cs" />
+    <Compile Include="Controllers\WarehouseController.cs" />
+    <Compile Include="Controllers\WarehouseTypeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -221,6 +233,10 @@
     <Compile Include="Migrations\201801061715176_eflorist.cs" />
     <Compile Include="Migrations\201801061715176_eflorist.Designer.cs">
       <DependentUpon>201801061715176_eflorist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801061832333_NewSeed.cs" />
+    <Compile Include="Migrations\201801061832333_NewSeed.Designer.cs">
+      <DependentUpon>201801061832333_NewSeed.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -321,6 +337,66 @@
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Movies\Edit.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Florist\Create.cshtml" />
+    <Content Include="Views\Florist\Delete.cshtml" />
+    <Content Include="Views\Florist\Details.cshtml" />
+    <Content Include="Views\Florist\Edit.cshtml" />
+    <Content Include="Views\Florist\Index.cshtml" />
+    <Content Include="Views\Invoice\Create.cshtml" />
+    <Content Include="Views\Invoice\Delete.cshtml" />
+    <Content Include="Views\Invoice\Details.cshtml" />
+    <Content Include="Views\Invoice\Edit.cshtml" />
+    <Content Include="Views\Invoice\Index.cshtml" />
+    <Content Include="Views\Item\Create.cshtml" />
+    <Content Include="Views\Item\Delete.cshtml" />
+    <Content Include="Views\Item\Details.cshtml" />
+    <Content Include="Views\Item\Edit.cshtml" />
+    <Content Include="Views\Item\Index.cshtml" />
+    <Content Include="Views\ItemType\Create.cshtml" />
+    <Content Include="Views\ItemType\Delete.cshtml" />
+    <Content Include="Views\ItemType\Details.cshtml" />
+    <Content Include="Views\ItemType\Edit.cshtml" />
+    <Content Include="Views\ItemType\Index.cshtml" />
+    <Content Include="Views\Order\Create.cshtml" />
+    <Content Include="Views\Order\Delete.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Order\Edit.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\OrderItem\Create.cshtml" />
+    <Content Include="Views\OrderItem\Delete.cshtml" />
+    <Content Include="Views\OrderItem\Details.cshtml" />
+    <Content Include="Views\OrderItem\Edit.cshtml" />
+    <Content Include="Views\OrderItem\Index.cshtml" />
+    <Content Include="Views\PaymentType\Create.cshtml" />
+    <Content Include="Views\PaymentType\Delete.cshtml" />
+    <Content Include="Views\PaymentType\Details.cshtml" />
+    <Content Include="Views\PaymentType\Edit.cshtml" />
+    <Content Include="Views\PaymentType\Index.cshtml" />
+    <Content Include="Views\StatusType\Create.cshtml" />
+    <Content Include="Views\StatusType\Delete.cshtml" />
+    <Content Include="Views\StatusType\Details.cshtml" />
+    <Content Include="Views\StatusType\Edit.cshtml" />
+    <Content Include="Views\StatusType\Index.cshtml" />
+    <Content Include="Views\Truck\Create.cshtml" />
+    <Content Include="Views\Truck\Delete.cshtml" />
+    <Content Include="Views\Truck\Details.cshtml" />
+    <Content Include="Views\Truck\Edit.cshtml" />
+    <Content Include="Views\Truck\Index.cshtml" />
+    <Content Include="Views\TruckType\Create.cshtml" />
+    <Content Include="Views\TruckType\Delete.cshtml" />
+    <Content Include="Views\TruckType\Details.cshtml" />
+    <Content Include="Views\TruckType\Edit.cshtml" />
+    <Content Include="Views\TruckType\Index.cshtml" />
+    <Content Include="Views\Warehouse\Create.cshtml" />
+    <Content Include="Views\Warehouse\Delete.cshtml" />
+    <Content Include="Views\Warehouse\Details.cshtml" />
+    <Content Include="Views\Warehouse\Edit.cshtml" />
+    <Content Include="Views\Warehouse\Index.cshtml" />
+    <Content Include="Views\WarehouseType\Create.cshtml" />
+    <Content Include="Views\WarehouseType\Delete.cshtml" />
+    <Content Include="Views\WarehouseType\Details.cshtml" />
+    <Content Include="Views\WarehouseType\Edit.cshtml" />
+    <Content Include="Views\WarehouseType\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -345,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801061715176_eflorist.resx">
       <DependentUpon>201801061715176_eflorist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801061832333_NewSeed.resx">
+      <DependentUpon>201801061832333_NewSeed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
