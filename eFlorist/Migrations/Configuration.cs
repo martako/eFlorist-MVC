@@ -28,12 +28,13 @@ namespace eFlorist.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            context.TruckTypes.AddOrUpdate(i => i.TruckTypeName,
-            new TruckType
+            var trucktype1 = new TruckType
             {
                 TruckTypeName = "Samochód osobowy",
                 Trucks = new List<Truck>()
-            },
+            };
+            context.TruckTypes.AddOrUpdate(i => i.TruckTypeName,
+            trucktype1,
             new TruckType
             {
                 TruckTypeName = "Ciê¿arówka",
@@ -101,12 +102,14 @@ namespace eFlorist.Migrations
                 Orders = new List<Order>()
             });
 
-            context.WarehouseTypes.AddOrUpdate(i => i.WarehouseTypeName,
-            new WarehouseType
+            var type1 = new WarehouseType()
             {
                 WarehouseTypeName = "Magazyn otwarty",
                 Warehouses = new List<Warehouse>()
-            },
+            };
+
+            context.WarehouseTypes.AddOrUpdate(i => i.WarehouseTypeName,
+            type1,
             new WarehouseType
             {
                 WarehouseTypeName = "Magazyn zamkniêty",
@@ -117,6 +120,33 @@ namespace eFlorist.Migrations
                 WarehouseTypeName = "Magazyn pó³otwarty",
                 Warehouses = new List<Warehouse>()
             });
+            context.SaveChanges();
+
+            if (!context.Warehouses.Any())
+            {
+                context.Warehouses.AddOrUpdate(i => i.WarehouseName,
+                new Warehouse
+                {
+                    WarehouseName = "Koluszki",
+                    WarehouseType = type1,
+                    OrderList = new List<Order>(),
+                    InvoiceList = new List<Invoice>(),
+                    FloristList = new List<Florist>()
+                });
+            }
+            if (!context.Trucks.Any())
+            {
+                context.Trucks.AddOrUpdate(i => i.TruckName,
+                new Truck
+                {
+                    TruckName = "Yaris",
+                    TruckType = trucktype1,
+                    Orders = new List<Order>(),
+                    Brand = "Toyota",
+                    RegistrationNo = "SWA 1234",
+                });
+            }
+            context.SaveChanges();
         }
     }
 }

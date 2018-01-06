@@ -25,57 +25,57 @@ namespace eFlorist.Models
             modelBuilder.Entity<Order>()
                 .HasRequired<StatusType>(s => s.OrderStatus)
                 .WithMany(g => g.Orders)
-                .HasForeignKey<int>(s => s.OrderStatusId);
+                .HasForeignKey<int?>(s => s.OrderStatusId);
 
             modelBuilder.Entity<Order>()
                 .HasRequired<Truck>(s => s.OrderTruck)
                 .WithMany(g => g.Orders)
-                .HasForeignKey<int>(s => s.OrderTruckId);
+                .HasForeignKey<int?>(s => s.OrderTruckId);
 
             modelBuilder.Entity<Order>()
                 .HasRequired<Warehouse>(s => s.Warehouse)
                 .WithMany(g => g.OrderList)
-                .HasForeignKey<int>(s => s.WarehouseId);
+                .HasForeignKey<int?>(s => s.WarehouseId);
 
             modelBuilder.Entity<Order>()
                 .HasRequired<PaymentType>(s => s.OrderPayment)
                 .WithMany(g => g.Orders)
-                .HasForeignKey<int>(s => s.OrderPaymentId);
+                .HasForeignKey<int?>(s => s.OrderPaymentId);
 
             modelBuilder.Entity<Truck>()
                .HasRequired<TruckType>(s => s.TruckType)
                .WithMany(g => g.Trucks)
-               .HasForeignKey<int>(s => s.TruckTypeId);
+               .HasForeignKey<int?>(s => s.TruckTypeId);
 
             modelBuilder.Entity<Warehouse>()
                .HasRequired<WarehouseType>(s => s.WarehouseType)
                .WithMany(g => g.Warehouses)
-               .HasForeignKey<int>(s => s.WarehouseTypeId);
+               .HasForeignKey<int?>(s => s.WarehouseTypeId);
 
             modelBuilder.Entity<Invoice>()
                .HasRequired<Warehouse>(s => s.Warehouse)
                .WithMany(g => g.InvoiceList)
-               .HasForeignKey<int>(s => s.WarehouseId);
+               .HasForeignKey<int?>(s => s.WarehouseId);
 
             modelBuilder.Entity<Invoice>()
               .HasRequired<Florist>(s => s.Florist)
               .WithMany(g => g.InvoiceList)
-              .HasForeignKey<int>(s => s.FloristId);
+              .HasForeignKey<int?>(s => s.FloristId);
 
             modelBuilder.Entity<Item>()
               .HasRequired<ItemType>(s => s.ItemType)
               .WithMany(g => g.Items)
-              .HasForeignKey<int>(s => s.ItemTypeId);
+              .HasForeignKey<int?>(s => s.ItemTypeId);
 
             modelBuilder.Entity<OrderItem>()
               .HasRequired<Item>(s => s.Item)
               .WithMany(g => g.OrderItems)
-              .HasForeignKey<int>(s => s.ItemId);
+              .HasForeignKey<int?>(s => s.ItemId);
 
             modelBuilder.Entity<OrderItem>()
               .HasRequired<Order>(s => s.Order)
               .WithMany(g => g.OrderItems)
-              .HasForeignKey<int>(s => s.OrderId);
+              .HasForeignKey<int?>(s => s.OrderId);
 
             // configures many-to-many relationship
             modelBuilder.Entity<Florist>()

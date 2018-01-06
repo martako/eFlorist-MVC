@@ -4,13 +4,19 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Lista zamówień</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Dodaj zamówienie", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderCreatedDate)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Invoice.InvoiceNo)
         </th>
@@ -27,15 +33,6 @@
             @Html.DisplayNameFor(model => model.Warehouse.WarehouseName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OrderNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OrderCreatedDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsAccepted)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.IsRejected)
         </th>
         <th></th>
@@ -43,6 +40,12 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderCreatedDate)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Invoice.InvoiceNo)
         </td>
@@ -57,15 +60,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Warehouse.WarehouseName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderCreatedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsAccepted)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.IsRejected)

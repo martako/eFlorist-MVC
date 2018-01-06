@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Dodaj zamówienie</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Order</h4>
+       
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -31,28 +31,10 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.IsAccepted, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsAccepted)
-                    @Html.ValidationMessageFor(model => model.IsAccepted, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
+       
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IsRejected, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsRejected)
-                    @Html.ValidationMessageFor(model => model.IsRejected, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.OrderStatusId, "OrderStatusId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.OrderStatusId, "Status", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("OrderStatusId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.OrderStatusId, "", new { @class = "text-danger" })
@@ -60,7 +42,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.OrderTruckId, "OrderTruckId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.OrderTruckId, "Pojazd", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("OrderTruckId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.OrderTruckId, "", new { @class = "text-danger" })
@@ -68,7 +50,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.WarehouseId, "WarehouseId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.WarehouseId, "Magazyn", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("WarehouseId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.WarehouseId, "", new { @class = "text-danger" })
@@ -76,7 +58,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.OrderPaymentId, "OrderPaymentId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.OrderPaymentId, "Płatność", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("OrderPaymentId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.OrderPaymentId, "", new { @class = "text-danger" })

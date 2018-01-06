@@ -11,7 +11,7 @@ namespace eFlorist.Models
         public Item Item { get; set; }
         public int ItemQuantity { get; set; }
         public Order Order { get; set; }
-        public int ItemId { get; set; }
-        public int OrderId { get; set; }
+        public int? ItemId { get; set; }
+        public int? OrderId { get; set; }
     }
 }

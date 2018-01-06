@@ -238,6 +238,30 @@
     <Compile Include="Migrations\201801061832333_NewSeed.Designer.cs">
       <DependentUpon>201801061832333_NewSeed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801061936340_NewSeed1.cs" />
+    <Compile Include="Migrations\201801061936340_NewSeed1.Designer.cs">
+      <DependentUpon>201801061936340_NewSeed1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801061940578_NewSeed2.cs" />
+    <Compile Include="Migrations\201801061940578_NewSeed2.Designer.cs">
+      <DependentUpon>201801061940578_NewSeed2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801061959294_problems.cs" />
+    <Compile Include="Migrations\201801061959294_problems.Designer.cs">
+      <DependentUpon>201801061959294_problems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801062021425_Nullable.cs" />
+    <Compile Include="Migrations\201801062021425_Nullable.Designer.cs">
+      <DependentUpon>201801062021425_Nullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801062030345_New1.cs" />
+    <Compile Include="Migrations\201801062030345_New1.Designer.cs">
+      <DependentUpon>201801062030345_New1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801062036556_New2.cs" />
+    <Compile Include="Migrations\201801062036556_New2.Designer.cs">
+      <DependentUpon>201801062036556_New2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EFloristDbContext.cs" />
@@ -424,6 +448,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801061832333_NewSeed.resx">
       <DependentUpon>201801061832333_NewSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801061936340_NewSeed1.resx">
+      <DependentUpon>201801061936340_NewSeed1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801061940578_NewSeed2.resx">
+      <DependentUpon>201801061940578_NewSeed2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801061959294_problems.resx">
+      <DependentUpon>201801061959294_problems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801062021425_Nullable.resx">
+      <DependentUpon>201801062021425_Nullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801062030345_New1.resx">
+      <DependentUpon>201801062030345_New1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801062036556_New2.resx">
+      <DependentUpon>201801062036556_New2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

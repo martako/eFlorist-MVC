@@ -12,6 +12,6 @@ namespace eFlorist.Models
         public ItemType ItemType { get; set; }
         public ICollection<OrderItem> OrderItems { get; set; }
         public ICollection<Florist> Florists { get; set; }
-        public int ItemTypeId { get; set; }
+        public int? ItemTypeId { get; set; }
     }
 }
