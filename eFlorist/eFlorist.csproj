@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -205,10 +206,40 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801061203463_Initial.cs" />
+    <Compile Include="Migrations\201801061203463_Initial.Designer.cs">
+      <DependentUpon>201801061203463_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801061212515_Rating.cs" />
+    <Compile Include="Migrations\201801061212515_Rating.Designer.cs">
+      <DependentUpon>201801061212515_Rating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801061229286_DataAnnotations.cs" />
+    <Compile Include="Migrations\201801061229286_DataAnnotations.Designer.cs">
+      <DependentUpon>201801061229286_DataAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801061715176_eflorist.cs" />
+    <Compile Include="Migrations\201801061715176_eflorist.Designer.cs">
+      <DependentUpon>201801061715176_eflorist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\EFloristDbContext.cs" />
+    <Compile Include="Models\Florist.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\ItemType.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderItem.cs" />
+    <Compile Include="Models\PaymentType.cs" />
+    <Compile Include="Models\StatusType.cs" />
+    <Compile Include="Models\Truck.cs" />
+    <Compile Include="Models\TruckType.cs" />
+    <Compile Include="Models\Warehouse.cs" />
+    <Compile Include="Models\WarehouseType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -301,6 +332,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801061203463_Initial.resx">
+      <DependentUpon>201801061203463_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801061212515_Rating.resx">
+      <DependentUpon>201801061212515_Rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801061229286_DataAnnotations.resx">
+      <DependentUpon>201801061229286_DataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801061715176_eflorist.resx">
+      <DependentUpon>201801061715176_eflorist.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
