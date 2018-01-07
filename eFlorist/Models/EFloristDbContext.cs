@@ -21,6 +21,7 @@ namespace eFlorist.Models
         public DbSet<WarehouseType> WarehouseTypes { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Properties<string>().Configure(x => x.HasColumnType("nvarchar"));
             // configures one-to-many relationship
             modelBuilder.Entity<Order>()
                 .HasRequired<StatusType>(s => s.OrderStatus)

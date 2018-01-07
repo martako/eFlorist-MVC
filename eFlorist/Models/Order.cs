@@ -12,6 +12,7 @@ namespace eFlorist.Models
         [Display(Name = "Numer zamówienia")]
         public string OrderNo { get; set; }
         [Display(Name = "Data zamówienia")]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime OrderCreatedDate { get; set; }
         public StatusType OrderStatus { get; set; }
         public Truck OrderTruck { get; set; }

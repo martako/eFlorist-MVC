@@ -1,4 +1,4 @@
-namespace eFlorist.Migrations
+﻿namespace eFlorist.Migrations
 {
     using eFlorist.Models;
     using System;
@@ -28,16 +28,17 @@ namespace eFlorist.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
             var trucktype1 = new TruckType
             {
-                TruckTypeName = "Samoch�d osobowy",
+                TruckTypeName = "Samochód osobowy",
                 Trucks = new List<Truck>()
             };
             context.TruckTypes.AddOrUpdate(i => i.TruckTypeName,
             trucktype1,
             new TruckType
             {
-                TruckTypeName = "Ci�ar�wka",
+                TruckTypeName = "Ciężarówka",
                 Trucks = new List<Truck>()
             },
             new TruckType
@@ -93,12 +94,12 @@ namespace eFlorist.Migrations
             context.PaymentTypes.AddOrUpdate(i => i.PaymentName,
             new PaymentType
             {
-                PaymentName = "P�atno�� przy odbiorze",
+                PaymentName = "Płatność przy odbiorze",
                 Orders = new List<Order>()
             },
             new PaymentType
             {
-                PaymentName = "Przedp�ata",
+                PaymentName = "Przedpłata",
                 Orders = new List<Order>()
             });
 
@@ -112,12 +113,12 @@ namespace eFlorist.Migrations
             type1,
             new WarehouseType
             {
-                WarehouseTypeName = "Magazyn zamkni�ty",
+                WarehouseTypeName = "Magazyn zamknięty",
                 Warehouses = new List<Warehouse>()
             },
             new WarehouseType
             {
-                WarehouseTypeName = "Magazyn p�otwarty",
+                WarehouseTypeName = "Magazyn półotwarty",
                 Warehouses = new List<Warehouse>()
             });
             context.SaveChanges();

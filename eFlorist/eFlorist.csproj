@@ -262,6 +262,14 @@
     <Compile Include="Migrations\201801062036556_New2.Designer.cs">
       <DependentUpon>201801062036556_New2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801071408493_utf8.cs" />
+    <Compile Include="Migrations\201801071408493_utf8.Designer.cs">
+      <DependentUpon>201801071408493_utf8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801071425032_nvarchar.cs" />
+    <Compile Include="Migrations\201801071425032_nvarchar.Designer.cs">
+      <DependentUpon>201801071425032_nvarchar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EFloristDbContext.cs" />
@@ -466,6 +474,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801062036556_New2.resx">
       <DependentUpon>201801062036556_New2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801071408493_utf8.resx">
+      <DependentUpon>201801071408493_utf8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801071425032_nvarchar.resx">
+      <DependentUpon>201801071425032_nvarchar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
