@@ -11,6 +11,6 @@ namespace eFlorist.Models
         public int Id { get; set; }
         [Display(Name = "Status zamówienia")]
         public string StatusName { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

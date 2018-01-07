@@ -429,6 +429,7 @@
     <Content Include="Views\WarehouseType\Details.cshtml" />
     <Content Include="Views\WarehouseType\Edit.cshtml" />
     <Content Include="Views\WarehouseType\Index.cshtml" />
+    <Content Include="Views\OrderItem\CreateByOrderId.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

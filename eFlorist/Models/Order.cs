@@ -14,12 +14,12 @@ namespace eFlorist.Models
         [Display(Name = "Data zamówienia")]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime OrderCreatedDate { get; set; }
-        public StatusType OrderStatus { get; set; }
-        public Truck OrderTruck { get; set; }
-        public Warehouse Warehouse { get; set; }
-        public PaymentType OrderPayment { get; set; }
-        public Invoice Invoice { get; set; }
-        public ICollection<OrderItem> OrderItems { get; set; }
+        public virtual StatusType OrderStatus { get; set; }
+        public virtual Truck OrderTruck { get; set; }
+        public virtual Warehouse Warehouse { get; set; }
+        public virtual PaymentType OrderPayment { get; set; }
+        public virtual Invoice Invoice { get; set; }
+        public virtual ICollection<OrderItem> OrderItems { get; set; }
         [Display(Name = "Zaakceptowane")]
         public bool IsAccepted { get; set; }
         [Display(Name = "Odrzucone")]

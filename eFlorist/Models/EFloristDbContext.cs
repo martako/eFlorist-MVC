@@ -19,6 +19,11 @@ namespace eFlorist.Models
         public DbSet<TruckType> TruckTypes { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
         public DbSet<WarehouseType> WarehouseTypes { get; set; }
+
+        public EFloristDbContext() : base("name=EFloristDbContext")
+        {
+            this.Configuration.LazyLoadingEnabled = true;
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Properties<string>().Configure(x => x.HasColumnType("nvarchar"));

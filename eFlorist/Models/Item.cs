@@ -9,9 +9,9 @@ namespace eFlorist.Models
     {
         public int Id { get; set; }
         public string ItemName { get; set; }
-        public ItemType ItemType { get; set; }
-        public ICollection<OrderItem> OrderItems { get; set; }
-        public ICollection<Florist> Florists { get; set; }
+        public virtual ItemType ItemType { get; set; }
+        public virtual ICollection<OrderItem> OrderItems { get; set; }
+        public virtual ICollection<Florist> Florists { get; set; }
         public int? ItemTypeId { get; set; }
     }
 }

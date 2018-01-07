@@ -44,6 +44,38 @@ namespace eFlorist.Controllers
             return View();
         }
 
+
+        // GET: OrderItem/Create
+        public ActionResult CreateByOrderId(int orderId)
+        {
+            ViewBag.ItemId = new SelectList(db.Items, "Id", "ItemName");
+
+            var selectList = new SelectList(db.Orders, "Id", "OrderNo");
+            selectList.Single(x => x.Value == orderId.ToString()).Selected = true;
+            ViewBag.OrderId = selectList;
+            ViewBag.SelectedOrderId = orderId;
+            return View();
+        }
+
+        // POST: OrderItem/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateByOrderId([Bind(Include = "Id,ItemQuantity,ItemId,OrderId")] OrderItem orderItem)
+        {
+            if (ModelState.IsValid)
+            {
+                db.OrderItems.Add(orderItem);
+                db.SaveChanges();
+                return RedirectToAction("Edit", "Order", new { id = orderItem.OrderId });
+            }
+
+            ViewBag.ItemId = new SelectList(db.Items, "Id", "ItemName", orderItem.ItemId);
+            ViewBag.OrderId = new SelectList(db.Orders, "Id", "OrderNo", orderItem.OrderId);
+            return View(orderItem);
+        }
+
         // POST: OrderItem/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.

@@ -29,6 +29,7 @@ namespace eFlorist.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Order order = db.Orders.Find(id);
+            //order.OrderItems = db.OrderItems.Where(x => x.OrderId == id).Include(x => x.Item).ToList();
             if (order == null)
             {
                 return HttpNotFound();
@@ -81,6 +82,9 @@ namespace eFlorist.Controllers
             {
                 return HttpNotFound();
             }
+
+            //order.OrderItems = db.OrderItems.Where(x => x.OrderId == id).Include(x => x.Item).ToList();
+
             ViewBag.Id = new SelectList(db.Invoices, "Id", "InvoiceNo", order.Id);
             ViewBag.OrderPaymentId = new SelectList(db.PaymentTypes, "Id", "PaymentName", order.OrderPaymentId);
             ViewBag.OrderStatusId = new SelectList(db.StatusTypes, "Id", "StatusName", order.OrderStatusId);

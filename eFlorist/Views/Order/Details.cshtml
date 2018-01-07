@@ -80,9 +80,42 @@
 
         <dd>
             @Html.DisplayFor(model => model.IsRejected)
-        </dd>
+        </dd> 
 
     </dl>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.OrderItems, "Pozycje zamówienia", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <!--wylistowanie dodanych-->
+            <table>
+                @{
+                    try
+                    {
+                        foreach (var item in Model.OrderItems)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Item.ItemName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ItemQuantity)
+                                </td>
+                            </tr>
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+            </table>
+        </div>
+    </div>
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |

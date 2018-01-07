@@ -9,6 +9,6 @@ namespace eFlorist.Models
     {
         public int Id { get; set; }
         public string TruckTypeName { get; set; }
-        public ICollection<Truck> Trucks { get; set; }
+        public virtual ICollection<Truck> Trucks { get; set; }
     }
 }
