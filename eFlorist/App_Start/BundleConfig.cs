@@ -22,10 +22,17 @@ namespace eFlorist
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
+            bundles.Add(new StyleBundle("~/Content/assets/js/scripts").Include(
+                      "~/Content/assets/js/bootstrap-notify.js",
+                      "~/Content/assets/js/material-dashboard.js",
+                      "~/Content/assets/js/demo.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/assets/css/css").Include(
+                      "~/Content/assets/css/demo.css",
+                      "~/Content/assets/css/material-dashboard.css"));
         }
     }
 }

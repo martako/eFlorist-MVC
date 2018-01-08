@@ -1,6 +1,5 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +20,31 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+.lower-logo {
+    text-transform: lowercase;
+}
+.nav > li > i.material-icons {
+    display: inline-block;
+    margin-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+footer > p {
+    margin-left: 15px;
+}
+.main-panel {
+    background-color: #fdfdfd;
+}
+.sidebar .sidebar-background:after, .off-canvas-sidebar .sidebar-background:after  {
+    opacity: 0 !important;
+}
+ul.nav {
+    background-color: rgba(256, 256,256, 0.88);
+}
+p.button-add > a {
+    padding: 10px 10px 10px 10px;
+    border: 1px solid;
+    border-radius: 50px;
+    background-color: rgba(253,230,244,0.25);
 }
