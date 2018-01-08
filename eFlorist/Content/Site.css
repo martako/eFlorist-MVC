@@ -30,6 +30,9 @@ textarea {
     padding-top: 5px;
     padding-bottom: 5px;
 }
+.nav > li > i.material-icons:hover {
+    color: #abb1bd;
+}
 footer > p {
     margin-left: 15px;
 }
@@ -47,4 +50,10 @@ p.button-add > a {
     border: 1px solid;
     border-radius: 50px;
     background-color: rgba(253,230,244,0.25);
+}
+.btn-accept {
+   background-color: #4caf50 !important;
+}
+.form-group label.control-label {
+    font-size: 14px !important;
 }

@@ -45,7 +45,8 @@ namespace eFlorist.Controllers
             ViewBag.OrderStatusId = new SelectList(db.StatusTypes, "Id", "StatusName");
             ViewBag.OrderTruckId = new SelectList(db.Trucks, "Id", "TruckName");
             ViewBag.WarehouseId = new SelectList(db.Warehouses, "Id", "WarehouseName");
-            return View();
+
+            return View(new Order { OrderCreatedDate = DateTime.Now });
         }
 
         // POST: Order/Create
@@ -57,11 +58,15 @@ namespace eFlorist.Controllers
         {
             if (ModelState.IsValid)
             {
+                Random random = new Random();
+                int randomNumber = random.Next(0, 100000);
+                order.OrderNo = randomNumber.ToString();
+                order.OrderCreatedDate = DateTime.Now;
                 db.Orders.Add(order);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            
             ViewBag.Id = new SelectList(db.Invoices, "Id", "InvoiceNo", order.Id);
             ViewBag.OrderPaymentId = new SelectList(db.PaymentTypes, "Id", "PaymentName", order.OrderPaymentId);
             ViewBag.OrderStatusId = new SelectList(db.StatusTypes, "Id", "StatusName", order.OrderStatusId);
