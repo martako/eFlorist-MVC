@@ -57,3 +57,6 @@ p.button-add > a {
 .form-group label.control-label {
     font-size: 14px !important;
 }
+.main-panel {
+    max-height: none !important;
+}

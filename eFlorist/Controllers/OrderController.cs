@@ -89,7 +89,7 @@ namespace eFlorist.Controllers
             }
 
             //order.OrderItems = db.OrderItems.Where(x => x.OrderId == id).Include(x => x.Item).ToList();
-
+            ViewBag.OrderNo = order.OrderNo;
             ViewBag.Id = new SelectList(db.Invoices, "Id", "InvoiceNo", order.Id);
             ViewBag.OrderPaymentId = new SelectList(db.PaymentTypes, "Id", "PaymentName", order.OrderPaymentId);
             ViewBag.OrderStatusId = new SelectList(db.StatusTypes, "Id", "StatusName", order.OrderStatusId);
@@ -107,10 +107,13 @@ namespace eFlorist.Controllers
         {
             if (ModelState.IsValid)
             {
+                order.OrderNo = ViewBag.OrderNo;
+                order.OrderCreatedDate = DateTime.Now;
                 db.Entry(order).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             ViewBag.Id = new SelectList(db.Invoices, "Id", "InvoiceNo", order.Id);
             ViewBag.OrderPaymentId = new SelectList(db.PaymentTypes, "Id", "PaymentName", order.OrderPaymentId);
             ViewBag.OrderStatusId = new SelectList(db.StatusTypes, "Id", "StatusName", order.OrderStatusId);
