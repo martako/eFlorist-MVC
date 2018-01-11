@@ -270,6 +270,10 @@
     <Compile Include="Migrations\201801071425032_nvarchar.Designer.cs">
       <DependentUpon>201801071425032_nvarchar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801111444154_firstmigration.cs" />
+    <Compile Include="Migrations\201801111444154_firstmigration.Designer.cs">
+      <DependentUpon>201801111444154_firstmigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EFloristDbContext.cs" />
@@ -551,6 +555,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801071425032_nvarchar.resx">
       <DependentUpon>201801071425032_nvarchar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801111444154_firstmigration.resx">
+      <DependentUpon>201801111444154_firstmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
