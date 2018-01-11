@@ -60,3 +60,6 @@ p.button-add > a {
 .main-panel {
     max-height: none !important;
 }
+.btn-delete {
+    background-color: #e42424 !important;
+}
