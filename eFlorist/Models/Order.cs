@@ -17,6 +17,7 @@ namespace eFlorist.Models
         public virtual StatusType OrderStatus { get; set; }
         public virtual Truck OrderTruck { get; set; }
         public virtual Warehouse Warehouse { get; set; }
+        public virtual Florist Florist { get; set; }
         public virtual PaymentType OrderPayment { get; set; }
         public virtual Invoice Invoice { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
@@ -28,5 +29,8 @@ namespace eFlorist.Models
         public int? OrderTruckId { get; set; }
         public int? WarehouseId { get; set; }
         public int? OrderPaymentId { get; set; }
+        public int? FloristId { get; set; }
+
+         
     }
 }

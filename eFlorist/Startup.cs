@@ -52,10 +52,10 @@ namespace eFlorist
             }
 
             //  admin magazynu   
-            if (!roleManager.RoleExists("Warehouse Admin"))
+            if (!roleManager.RoleExists("Warehouse Director"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Warehouse Admin";
+                role.Name = "Warehouse Director";
                 roleManager.Create(role);
 
             }

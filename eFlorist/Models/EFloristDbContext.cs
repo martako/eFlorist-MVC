@@ -44,6 +44,11 @@ namespace eFlorist.Models
                 .HasForeignKey<int?>(s => s.WarehouseId);
 
             modelBuilder.Entity<Order>()
+               .HasRequired<Florist>(s => s.Florist)
+               .WithMany(g => g.OrderList)
+               .HasForeignKey<int?>(s => s.FloristId);
+
+            modelBuilder.Entity<Order>()
                 .HasRequired<PaymentType>(s => s.OrderPayment)
                 .WithMany(g => g.Orders)
                 .HasForeignKey<int?>(s => s.OrderPaymentId);

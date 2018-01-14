@@ -278,6 +278,14 @@
     <Compile Include="Migrations\201801141324440_roles.Designer.cs">
       <DependentUpon>201801141324440_roles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801141536525_FloristProp.cs" />
+    <Compile Include="Migrations\201801141536525_FloristProp.Designer.cs">
+      <DependentUpon>201801141536525_FloristProp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801141649302_NewMigration.cs" />
+    <Compile Include="Migrations\201801141649302_NewMigration.Designer.cs">
+      <DependentUpon>201801141649302_NewMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EFloristDbContext.cs" />
@@ -565,6 +573,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801141324440_roles.resx">
       <DependentUpon>201801141324440_roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801141536525_FloristProp.resx">
+      <DependentUpon>201801141536525_FloristProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801141649302_NewMigration.resx">
+      <DependentUpon>201801141649302_NewMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

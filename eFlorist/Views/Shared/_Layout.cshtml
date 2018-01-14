@@ -56,22 +56,26 @@
                     <li>
                         <i class="material-icons">person</i>
                         @Html.ActionLink("Moje Konto", "Index", "Home")
-                    </li>
+                    </li>                   
                     <li>
                         <i class="material-icons">content_paste</i>
                         @Html.ActionLink("Zamówienia", "Index", "Order")
+                    </li>
+                    @if (User.IsInRole("Admin"))
+                    {
                     <li>
                         <i class="material-icons">add_location</i>
                         @Html.ActionLink("Bazy magazynowe", "Index", "Warehouse")
-
                     </li>
+                    }
+                    @if (User.IsInRole("Admin"))
+                    {
                     <li>
                         <i class="material-icons">filter_vintage</i>
                         @Html.ActionLink("Kwiaciarnie", "Index", "Florist")
 
                     </li>
-
-
+                    }
                 </ul>
             </div>
             <div class="sidebar-background" style="background-image: url(../Content/assets/img/sidebar-6.jpg)"></div>

@@ -46,6 +46,7 @@ namespace eFlorist.Controllers
             ViewBag.OrderStatusId = new SelectList(db.StatusTypes, "Id", "StatusName");
             ViewBag.OrderTruckId = new SelectList(db.Trucks, "Id", "TruckName");
             ViewBag.WarehouseId = new SelectList(db.Warehouses, "Id", "WarehouseName");
+            ViewBag.FloristId = new SelectList(db.Florists, "Id", "FloristName");
 
             return View(new Order { OrderCreatedDate = DateTime.Now });
         }
@@ -55,7 +56,7 @@ namespace eFlorist.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,OrderNo,OrderCreatedDate,IsAccepted,IsRejected,OrderStatusId,OrderTruckId,WarehouseId,OrderPaymentId")] Order order)
+        public ActionResult Create([Bind(Include = "Id,OrderNo,OrderCreatedDate,IsAccepted,IsRejected,OrderStatusId,OrderTruckId,WarehouseId,OrderPaymentId,FloristId")] Order order)
         {
             if (ModelState.IsValid)
             {
@@ -73,6 +74,8 @@ namespace eFlorist.Controllers
             ViewBag.OrderStatusId = new SelectList(db.StatusTypes, "Id", "StatusName", order.OrderStatusId);
             ViewBag.OrderTruckId = new SelectList(db.Trucks, "Id", "TruckName", order.OrderTruckId);
             ViewBag.WarehouseId = new SelectList(db.Warehouses, "Id", "WarehouseName", order.WarehouseId);
+            ViewBag.FloristId = new SelectList(db.Florists, "Id", "FloristName", order.FloristId);
+
             return View(order);
         }
 
@@ -96,6 +99,8 @@ namespace eFlorist.Controllers
             ViewBag.OrderStatusId = new SelectList(db.StatusTypes, "Id", "StatusName", order.OrderStatusId);
             ViewBag.OrderTruckId = new SelectList(db.Trucks, "Id", "TruckName", order.OrderTruckId);
             ViewBag.WarehouseId = new SelectList(db.Warehouses, "Id", "WarehouseName", order.WarehouseId);
+            ViewBag.FloristId = new SelectList(db.Florists, "Id", "FloristName");
+
             return View(order);
         }
 
@@ -104,7 +109,7 @@ namespace eFlorist.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,OrderNo,OrderCreatedDate,IsAccepted,IsRejected,OrderStatusId,OrderTruckId,WarehouseId,OrderPaymentId")] Order order)
+        public ActionResult Edit([Bind(Include = "Id,OrderNo,OrderCreatedDate,IsAccepted,IsRejected,OrderStatusId,OrderTruckId,WarehouseId,OrderPaymentId,FloristId")] Order order)
         {
             if (ModelState.IsValid)
             {
@@ -120,6 +125,8 @@ namespace eFlorist.Controllers
             ViewBag.OrderStatusId = new SelectList(db.StatusTypes, "Id", "StatusName", order.OrderStatusId);
             ViewBag.OrderTruckId = new SelectList(db.Trucks, "Id", "TruckName", order.OrderTruckId);
             ViewBag.WarehouseId = new SelectList(db.Warehouses, "Id", "WarehouseName", order.WarehouseId);
+            ViewBag.FloristId = new SelectList(db.Florists, "Id", "FloristName");
+
             return View(order);
         }
 
