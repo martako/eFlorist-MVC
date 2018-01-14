@@ -30,7 +30,7 @@ namespace eFlorist.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Order order = db.Orders.Find(id);
-            //order.OrderItems = db.OrderItems.Where(x => x.OrderId == id).Include(x => x.Item).ToList();
+
             if (order == null)
             {
                 return HttpNotFound();
@@ -92,14 +92,12 @@ namespace eFlorist.Controllers
                 return HttpNotFound();
             }
 
-            //order.OrderItems = db.OrderItems.Where(x => x.OrderId == id).Include(x => x.Item).ToList();
-            //ViewBag.OrderNo = order.OrderNo;
             ViewBag.Id = new SelectList(db.Invoices, "Id", "InvoiceNo", order.Id);
             ViewBag.OrderPaymentId = new SelectList(db.PaymentTypes, "Id", "PaymentName", order.OrderPaymentId);
             ViewBag.OrderStatusId = new SelectList(db.StatusTypes, "Id", "StatusName", order.OrderStatusId);
             ViewBag.OrderTruckId = new SelectList(db.Trucks, "Id", "TruckName", order.OrderTruckId);
             ViewBag.WarehouseId = new SelectList(db.Warehouses, "Id", "WarehouseName", order.WarehouseId);
-            ViewBag.FloristId = new SelectList(db.Florists, "Id", "FloristName");
+            ViewBag.FloristId = new SelectList(db.Florists, "Id", "FloristName", order.FloristId);
 
             return View(order);
         }
@@ -113,8 +111,6 @@ namespace eFlorist.Controllers
         {
             if (ModelState.IsValid)
             {
-                //order.OrderNo = db.Orders.Single(x => x.Id == order.Id).OrderNo; //ViewBag.OrderNo;
-                //order.OrderCreatedDate = DateTime.Now;
                 db.Entry(order).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -125,7 +121,7 @@ namespace eFlorist.Controllers
             ViewBag.OrderStatusId = new SelectList(db.StatusTypes, "Id", "StatusName", order.OrderStatusId);
             ViewBag.OrderTruckId = new SelectList(db.Trucks, "Id", "TruckName", order.OrderTruckId);
             ViewBag.WarehouseId = new SelectList(db.Warehouses, "Id", "WarehouseName", order.WarehouseId);
-            ViewBag.FloristId = new SelectList(db.Florists, "Id", "FloristName");
+            ViewBag.FloristId = new SelectList(db.Florists, "Id", "FloristName", order.FloristId);
 
             return View(order);
         }
