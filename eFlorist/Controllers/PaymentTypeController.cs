@@ -10,6 +10,7 @@ using eFlorist.Models;
 
 namespace eFlorist.Controllers
 {
+    [Authorize]
     public class PaymentTypeController : Controller
     {
         private EFloristDbContext db = new EFloristDbContext();

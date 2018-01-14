@@ -10,6 +10,7 @@ using eFlorist.Models;
 
 namespace eFlorist.Controllers
 {
+    [Authorize]
     public class ItemTypeController : Controller
     {
         private EFloristDbContext db = new EFloristDbContext();

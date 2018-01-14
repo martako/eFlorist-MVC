@@ -274,6 +274,10 @@
     <Compile Include="Migrations\201801111444154_firstmigration.Designer.cs">
       <DependentUpon>201801111444154_firstmigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801141324440_roles.cs" />
+    <Compile Include="Migrations\201801141324440_roles.Designer.cs">
+      <DependentUpon>201801141324440_roles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EFloristDbContext.cs" />
@@ -558,6 +562,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801111444154_firstmigration.resx">
       <DependentUpon>201801111444154_firstmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801141324440_roles.resx">
+      <DependentUpon>201801141324440_roles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
