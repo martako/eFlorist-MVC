@@ -16,9 +16,21 @@ namespace eFlorist.Controllers
         private EFloristDbContext db = new EFloristDbContext();
 
         // GET: Order
-        public ActionResult Index()
+        public ActionResult Index(int? floristId, int? warehouseId)
         {
+            ViewBag.Warehouses = db.Warehouses.ToList();
+            ViewBag.Florists = db.Florists.ToList();
             var orders = db.Orders.Include(o => o.Invoice).Include(o => o.OrderPayment).Include(o => o.OrderStatus).Include(o => o.OrderTruck).Include(o => o.Warehouse);
+
+            if (warehouseId.HasValue)
+            {
+                orders = orders.Where(x => x.WarehouseId == warehouseId.Value);
+            }
+
+            if (floristId.HasValue)
+            {
+                orders = orders.Where(x => x.FloristId == floristId.Value);
+            }
             return View(orders.ToList());
         }
 
