@@ -21,7 +21,7 @@ namespace eFlorist.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("EFloristDbContext", throwIfV1Schema: false)//DefaultConnection
         {
         }
 
