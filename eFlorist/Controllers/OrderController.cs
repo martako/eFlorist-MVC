@@ -53,7 +53,8 @@ namespace eFlorist.Controllers
         // GET: Order/Create
         public ActionResult Create()
         {
-            ViewBag.Id = new SelectList(db.Invoices, "Id", "InvoiceNo");
+            //ViewBag.Id = new SelectList(db.Invoices, "Id", "InvoiceNo");
+            //ViewBag.Id = new SelectList(db.Orders, "Id", "OrderNo");
             ViewBag.OrderPaymentId = new SelectList(db.PaymentTypes, "Id", "PaymentName");
             ViewBag.OrderStatusId = new SelectList(db.StatusTypes, "Id", "StatusName");
             ViewBag.OrderTruckId = new SelectList(db.Trucks, "Id", "TruckName");
@@ -68,7 +69,7 @@ namespace eFlorist.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,OrderNo,OrderCreatedDate,IsAccepted,IsRejected,OrderStatusId,OrderTruckId,WarehouseId,OrderPaymentId,FloristId")] Order order)
+        public ActionResult Create([Bind(Include = "Id,OrderNo,OrderCreatedDate,IsAccepted,IsRejected,OrderStatusId,OrderTruckId,WarehouseId,OrderPaymentId,FloristId,InvoiceId")] Order order)
         {
             if (ModelState.IsValid)
             {
@@ -77,23 +78,33 @@ namespace eFlorist.Controllers
                 int ramdomInvoiceNo = random.Next(0, 1000);
                 order.OrderNo = randomNumber.ToString();
                 order.OrderCreatedDate = DateTime.Now;
-                order.Invoice = new Invoice {
+
+
+                var inv = new Invoice
+                {
                     InvoiceNo = ramdomInvoiceNo.ToString(),
                     WarehouseId = order.WarehouseId,
                     FloristId = order.FloristId
-                    
                 };
+
+
+                order.Invoice = inv;
+                inv.Order = order;
+
                 db.Orders.Add(order);
-                db.SaveChanges();
+                db.Invoices.Add(inv);
+
+                db.SaveChanges();  
                 return RedirectToAction("Index");
             }
             
-            ViewBag.Id = new SelectList(db.Invoices, "Id", "InvoiceNo", order.Id);
+            //ViewBag.Id = new SelectList(db.Orders, "Id", "OrderNo", order.Id);
             ViewBag.OrderPaymentId = new SelectList(db.PaymentTypes, "Id", "PaymentName", order.OrderPaymentId);
             ViewBag.OrderStatusId = new SelectList(db.StatusTypes, "Id", "StatusName", order.OrderStatusId);
             ViewBag.OrderTruckId = new SelectList(db.Trucks, "Id", "TruckName", order.OrderTruckId);
             ViewBag.WarehouseId = new SelectList(db.Warehouses, "Id", "WarehouseName", order.WarehouseId);
             ViewBag.FloristId = new SelectList(db.Florists, "Id", "FloristName", order.FloristId);
+
 
             return View(order);
         }
@@ -126,7 +137,7 @@ namespace eFlorist.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,OrderNo,OrderCreatedDate,IsAccepted,IsRejected,OrderStatusId,OrderTruckId,WarehouseId,OrderPaymentId,FloristId")] Order order)
+        public ActionResult Edit([Bind(Include = "Id,OrderNo,OrderCreatedDate,IsAccepted,IsRejected,OrderStatusId,OrderTruckId,WarehouseId,OrderPaymentId,FloristId,InvoiceId")] Order order)
         {
             if (ModelState.IsValid)
             {

@@ -30,7 +30,6 @@ namespace eFlorist.Models
         public int? WarehouseId { get; set; }
         public int? OrderPaymentId { get; set; }
         public int? FloristId { get; set; }
-
-         
+        public int? InvoiceId { get; set; }
     }
 }

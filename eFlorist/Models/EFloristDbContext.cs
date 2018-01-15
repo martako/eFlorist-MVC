@@ -111,9 +111,15 @@ namespace eFlorist.Models
 
             // configures one-to-one relationship
 
-            modelBuilder.Entity<Order>()
-                .HasOptional(s => s.Invoice) // InvoiceNo property optional in Order entity
-                .WithRequired(invoice => invoice.Order);
+            // Configure InvoiceId as PK for Order
+            /*modelBuilder.Entity<Order>()
+                .HasKey(e => e.InvoiceId);*/
+
+            // Configure InvoiceId as FK for Order
+            modelBuilder.Entity<Invoice>()
+                        .HasRequired(s => s.Order)
+                        .WithRequiredPrincipal(ad => ad.Invoice);
+
 
         }
     }
