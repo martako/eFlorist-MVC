@@ -11,6 +11,7 @@ namespace eFlorist.Models
         public int Id { get; set; }
         [Display(Name = "Kwiaciarnia")]
         public string FloristName { get; set; }
+        public string FloristAddress { get; set; }
         public virtual ICollection<Item> ItemsList { get; set; }
         public virtual ICollection<Order> OrderList { get; set; }
         public virtual ICollection<Invoice> InvoiceList { get; set; }

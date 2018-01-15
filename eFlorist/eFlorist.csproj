@@ -290,6 +290,10 @@
     <Compile Include="Migrations\201801142020325_mergecontext.Designer.cs">
       <DependentUpon>201801142020325_mergecontext.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801150918135_addresses.cs" />
+    <Compile Include="Migrations\201801150918135_addresses.Designer.cs">
+      <DependentUpon>201801150918135_addresses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EFloristDbContext.cs" />
@@ -586,6 +590,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801142020325_mergecontext.resx">
       <DependentUpon>201801142020325_mergecontext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801150918135_addresses.resx">
+      <DependentUpon>201801150918135_addresses.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
