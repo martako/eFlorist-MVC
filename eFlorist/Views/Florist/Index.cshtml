@@ -20,6 +20,9 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.FloristName)
                                 </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FloristAddress)
+                                </th>
                                 <th></th>
                             </tr>
 
@@ -28,6 +31,9 @@
                                 <tr>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.FloristName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FloristAddress)
                                     </td>
                                     <td>
                                         @Html.ActionLink("Edycja", "Edit", new { id = item.Id }) |

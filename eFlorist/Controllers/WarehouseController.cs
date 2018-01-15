@@ -49,7 +49,7 @@ namespace eFlorist.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,WarehouseName,WarehouseTypeId")] Warehouse warehouse)
+        public ActionResult Create([Bind(Include = "Id,WarehouseName,WarehouseTypeId,WarehouseAddress")] Warehouse warehouse)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace eFlorist.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,WarehouseName,WarehouseTypeId")] Warehouse warehouse)
+        public ActionResult Edit([Bind(Include = "Id,WarehouseName,WarehouseTypeId,WarehouseAddress")] Warehouse warehouse)
         {
             if (ModelState.IsValid)
             {

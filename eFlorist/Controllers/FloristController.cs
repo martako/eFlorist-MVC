@@ -47,7 +47,7 @@ namespace eFlorist.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FloristName")] Florist florist)
+        public ActionResult Create([Bind(Include = "Id,FloristName,FloristAddress")] Florist florist)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace eFlorist.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FloristName")] Florist florist)
+        public ActionResult Edit([Bind(Include = "Id,FloristName,FloristAddress")] Florist florist)
         {
             if (ModelState.IsValid)
             {

@@ -76,6 +76,14 @@
 
                     </li>
                     }
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>
+                            <i class="material-icons">attach_money</i>
+                            @Html.ActionLink("Faktury", "Index", "Invoice")
+
+                        </li>
+                    }
                 </ul>
             </div>
             <div class="sidebar-background" style="background-image: url(../Content/assets/img/sidebar-6.jpg)"></div>
