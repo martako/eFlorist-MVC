@@ -130,6 +130,10 @@ namespace eFlorist.Controllers
         {
             if (ModelState.IsValid)
             {
+                //var invoice = db.Invoices.Single(x => x.Order.Id == order.Id);
+                //invoice.FloristId = order.FloristId;
+                //invoice.WarehouseId = order.WarehouseId;
+                //order.Invoice = invoice;
                 db.Entry(order).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
