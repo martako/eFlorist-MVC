@@ -74,8 +74,15 @@ namespace eFlorist.Controllers
             {
                 Random random = new Random();
                 int randomNumber = random.Next(0, 100000);
+                int ramdomInvoiceNo = random.Next(0, 1000);
                 order.OrderNo = randomNumber.ToString();
                 order.OrderCreatedDate = DateTime.Now;
+                order.Invoice = new Invoice {
+                    InvoiceNo = ramdomInvoiceNo.ToString(),
+                    WarehouseId = order.WarehouseId,
+                    FloristId = order.FloristId
+                    
+                };
                 db.Orders.Add(order);
                 db.SaveChanges();
                 return RedirectToAction("Index");
