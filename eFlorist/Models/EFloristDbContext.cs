@@ -5,8 +5,7 @@ using System.ComponentModel.DataAnnotations;
 namespace eFlorist.Models
 {
     public class EFloristDbContext : DbContext
-    {
-        public DbSet<Movie> Movies { get; set; }
+    { 
         public DbSet<Florist> Florists { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<Item> Items { get; set; }
